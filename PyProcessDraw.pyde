@@ -1,13 +1,11 @@
 # Drawing Options
 colorEraser = ""
 colorCurrent = ""
+strokeW = 3
 
 # Screen Options
 screenW = 800
 screenH = 800
-
-# Processing Options
-strokeW = 3
 
 # Palette
 class Palette(object):
