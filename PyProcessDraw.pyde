@@ -102,7 +102,7 @@ def drawColorCurrent():
     noStroke()
 
 # Mouse Release
-def mouseReleased():
+def mousePressed():
     global colorCurrent
     
     # Set currently selected color
