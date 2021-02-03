@@ -55,7 +55,7 @@ def setup():
     colorEraser = g.backgroundColor
     colorCurrent.c = colors[0].c
     
-    # Set options
+    # Options
     size(screenW, screenH)
     noStroke()
     
@@ -106,11 +106,12 @@ def mouseReleased():
     global colorCurrent
     
     # Set currently selected color
-    for c in colors:
-        if (c.isMouseOn()):
-            colorCurrent.c = c.c
-            drawColorCurrent()
-            break
+    if (mouseX < palette.w) and (mouseY < palette.h):
+        for c in colors:
+            if (c.isMouseOn()):
+                colorCurrent.c = c.c
+                drawColorCurrent()
+                break
 
 # Mouse Drag (draw / erase)
 def mouseDragged():
