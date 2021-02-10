@@ -57,7 +57,8 @@ def setup():
     
     # Options
     size(screenW, screenH)
-    noStroke()
+    textSize(18)
+    textAlign(CENTER)
     
     # Set palette width and height
     for c in colors:
@@ -71,7 +72,13 @@ def setup():
 
 # Draw Loop
 def draw():
-    pass
+    fill(colorEraser)
+    stroke(0)
+    strokeWeight(strokeSize)
+    square(screenW - (colorSize + 10), screenH - (colorSize + 10), colorSize)
+    fill(0)
+    text(int(brushSize), screenW - (colorSize - 5), screenH - (colorSize - 12))
+    noStroke()
 
 # Clear Screen
 def clear():
@@ -134,12 +141,22 @@ def mouseDragged():
 
 # Key Release
 def keyReleased():
+    global brushSize, brushCenter
+    
     # Clear the screen
     if (str(key).lower() == 'c'):
         clear()
     # Go Crazy
     elif (str(key).lower() == 'g'):
         goCrazy(int(random(3, 20)))
+    # Change brush size
+    elif (key == CODED):
+        if ((keyCode == UP) and (brushSize < 85)):
+            brushSize = brushSize * 1.2
+            brushCenter = brushSize / 2
+        elif ((keyCode == DOWN) and (brushSize > 5)):
+            brushSize = brushSize / 1.2
+            brushCenter = brushSize / 2
 
 # Go Crazy
 def goCrazy(n):
