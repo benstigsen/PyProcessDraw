@@ -20,5 +20,7 @@ I chose to create a drawing application because I've messed around with Processi
 - `c` to clear the screen
 - `g` to go crazy
 
+Increase brush size with arrow `up` and `down`
+
 ![](./img/1.png)
 
