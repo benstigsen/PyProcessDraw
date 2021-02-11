@@ -132,7 +132,7 @@ def mouseDragged():
         square(mouseX - brushCenter, mouseY - brushCenter, brushSize)
     
     # Only redraw palette when drawn over / erased
-    if (mouseX < palette.w + 10) and (mouseY < palette.h + 10):
+    if (mouseX < palette.w + brushCenter) and (mouseY < palette.h + brushCenter):
         drawPalette()
 
     # Only redraw current color when drawn over / erased
